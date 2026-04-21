@@ -129,7 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 21224559}
   - component: {fileID: 21224560}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bricks (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 40742160}
   - component: {fileID: 40742162}
   - component: {fileID: 40742161}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -363,7 +363,7 @@ GameObject:
   m_Component:
   - component: {fileID: 68925071}
   - component: {fileID: 68925072}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floor (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -442,7 +442,7 @@ GameObject:
   - component: {fileID: 336166398}
   - component: {fileID: 336166400}
   - component: {fileID: 336166399}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -536,7 +536,7 @@ GameObject:
   m_Component:
   - component: {fileID: 338646767}
   - component: {fileID: 338646768}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floor (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -615,7 +615,7 @@ GameObject:
   - component: {fileID: 457276584}
   - component: {fileID: 457276586}
   - component: {fileID: 457276585}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -931,7 +931,7 @@ GameObject:
   - component: {fileID: 628396695}
   - component: {fileID: 628396697}
   - component: {fileID: 628396696}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pipe (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1025,7 +1025,7 @@ GameObject:
   m_Component:
   - component: {fileID: 628736354}
   - component: {fileID: 628736355}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Walls (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1103,7 +1103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 802592314}
   - component: {fileID: 802592315}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Walls (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1182,7 +1182,7 @@ GameObject:
   - component: {fileID: 852851730}
   - component: {fileID: 852851732}
   - component: {fileID: 852851731}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1278,7 +1278,7 @@ GameObject:
   - component: {fileID: 859089092}
   - component: {fileID: 859089094}
   - component: {fileID: 859089093}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1374,7 +1374,7 @@ GameObject:
   - component: {fileID: 885526236}
   - component: {fileID: 885526238}
   - component: {fileID: 885526237}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1468,7 +1468,7 @@ GameObject:
   m_Component:
   - component: {fileID: 932761953}
   - component: {fileID: 932761954}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Walls (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1536,6 +1536,37 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 9.509972, y: 6.081372}
   m_EdgeRadius: 0
+--- !u!1 &937624575
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 937624576}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &937624576
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937624575}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.516, y: 2.56, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1831090531}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1040760671
 GameObject:
   m_ObjectHideFlags: 0
@@ -1547,7 +1578,7 @@ GameObject:
   - component: {fileID: 1040760672}
   - component: {fileID: 1040760674}
   - component: {fileID: 1040760673}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pipe (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1642,7 +1673,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1065871066}
   - component: {fileID: 1065871067}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1721,7 +1752,7 @@ GameObject:
   - component: {fileID: 1239211860}
   - component: {fileID: 1239211862}
   - component: {fileID: 1239211861}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1816,7 +1847,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1348161478}
   - component: {fileID: 1348161479}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Walls (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1894,7 +1925,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1360812919}
   - component: {fileID: 1360812920}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Clouds (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1972,7 +2003,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1368367655}
   - component: {fileID: 1368367656}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bricks (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2050,7 +2081,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1419139766}
   - component: {fileID: 1419139767}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2129,7 +2160,7 @@ GameObject:
   - component: {fileID: 1435570999}
   - component: {fileID: 1435571001}
   - component: {fileID: 1435571000}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2224,7 +2255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1595265403}
   - component: {fileID: 1595265404}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Walls (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2302,7 +2333,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1625631847}
   - component: {fileID: 1625631848}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2437,7 +2468,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -4424372450760166762, guid: a874fe6edc7e5bf41aaa8b444bcc5305, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.82476115, b: 0.6556604, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2471,7 +2502,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1645301383}
   - component: {fileID: 1645301384}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Clouds (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2549,7 +2580,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1664057150}
   - component: {fileID: 1664057151}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Clouds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2627,7 +2658,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1668045436}
   - component: {fileID: 1668045437}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bricks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2705,7 +2736,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1810987819}
   - component: {fileID: 1810987820}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floor (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2861,10 +2892,11 @@ Transform:
   m_GameObject: {fileID: 1831090529}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.516, y: -2.56, z: 0}
+  m_LocalPosition: {x: -3.504, y: -2.698, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 937624576}
   - {fileID: 519420032}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2953,6 +2985,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c87bf8aaff5708349a832f4555dd86a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  groundCheckRadius: 0.02
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
   moveSpeed: 5
   jumpForce: 7
 --- !u!1 &2035208260
@@ -2965,7 +3001,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2035208261}
   - component: {fileID: 2035208262}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Walls (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3043,7 +3079,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2100190690}
   - component: {fileID: 2100190691}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Clouds (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3122,7 +3158,7 @@ GameObject:
   - component: {fileID: 2102273739}
   - component: {fileID: 2102273741}
   - component: {fileID: 2102273740}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
