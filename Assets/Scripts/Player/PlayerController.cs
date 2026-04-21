@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
 
         float horizontalInput = Input.GetAxis("Horizontal");
         bool jumpInput = Input.GetButtonDown("Jump");
+        //bool atkInput = Input.GetButtonDown("Fire1");
 
         if (horizontalInput != 0) SpriteFlip(horizontalInput);
 
@@ -65,6 +66,11 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("horizontalInput", Mathf.Abs(horizontalInput));
         anim.SetBool("isGrounded", _isGrounded);
         anim.SetFloat("yVel", rb.linearVelocityY);
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            anim.SetTrigger("PlayAnim");
+        }
     }
 
     void SpriteFlip(float horizontalInput) => sr.flipX = (horizontalInput < 0);
