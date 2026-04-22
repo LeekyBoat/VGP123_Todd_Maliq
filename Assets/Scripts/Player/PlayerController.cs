@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
 
         float horizontalInput = Input.GetAxis("Horizontal");
         bool jumpInput = Input.GetButtonDown("Jump");
-        //bool atkInput = Input.GetButtonDown("Fire1");
+        bool atkInput = Input.GetButton("Fire2") && !_isGrounded;
 
         if (horizontalInput != 0) SpriteFlip(horizontalInput);
 
@@ -67,12 +67,17 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("isGrounded", _isGrounded);
         anim.SetFloat("yVel", rb.linearVelocityY);
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && _isGrounded)
         {
-            anim.SetTrigger("PlayAnim");
+            anim.SetTrigger("atk1");
         }
-    }
 
+       
+        anim.SetBool("atk2", atkInput);
+        
+      
+    }
+    
     void SpriteFlip(float horizontalInput) => sr.flipX = (horizontalInput < 0);
     //if (sr.flipX && horizontalInput > 0 || !sr.flipX && horizontalInput < 0)
     //    sr.flipX = !sr.flipX;
