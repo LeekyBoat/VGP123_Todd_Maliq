@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
 
     //state variables
     private bool _isGrounded;
+    private GroundCheck groundCheck;
 
     private Vector2 CalculateGroundCheckPos()
     {
@@ -40,13 +41,14 @@ public class PlayerController : MonoBehaviour
         col = GetComponent<Collider2D>();
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        groundCheck = new GroundCheck(col, rb, groundCheckRadius, groundLayer);
 }
 
     // Update is called once per frame
     void Update()
     {
 
-        _isGrounded = Physics2D.OverlapCircle(groundCheckPos, groundCheckRadius, groundLayer);
+        _isGrounded = groundCheck.CheckGrounded();
 
         float horizontalInput = Input.GetAxis("Horizontal");
         bool jumpInput = Input.GetButtonDown("Jump");
