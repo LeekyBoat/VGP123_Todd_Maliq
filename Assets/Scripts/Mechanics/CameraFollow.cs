@@ -43,7 +43,7 @@ public class CameraFollow : MonoBehaviour
         currentPos.x = Mathf.Clamp(target.position.x, minXPos, maxXPos);
 
 
-        transform.position = Vector3.MoveTowards(transform.position, currentPos, 5f * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, currentPos, 10f * Time.deltaTime);
 
         
     }

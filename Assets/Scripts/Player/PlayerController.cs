@@ -47,18 +47,21 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        AnimatorClipInfo[] clipInfo = anim.GetCurrentAnimatorClipInfo(0);
+
+
 
         _isGrounded = groundCheck.CheckGrounded();
 
-        float horizontalInput = Input.GetAxis("Horizontal");
-        bool jumpInput = Input.GetButtonDown("Jump");
-        bool atkInput = Input.GetButton("Fire2") && !_isGrounded;
+        float horizontalInput;
+        bool jumpInput, atkInput;
+        HandlePlayerInput(out horizontalInput, out jumpInput, out atkInput);
 
         if (horizontalInput != 0) SpriteFlip(horizontalInput);
 
         //2. Move our player horizontally based on the horizontal input value.
         rb.linearVelocityX = horizontalInput * moveSpeed;
-        
+
 
         if (jumpInput && _isGrounded)
         {
@@ -74,12 +77,21 @@ public class PlayerController : MonoBehaviour
             anim.SetTrigger("atk1");
         }
 
-       
         anim.SetBool("atk2", atkInput);
-        
-      
+
+        if (atkInput && clipInfo[0].clip.name != "atk1")
+        {
+            anim.SetTrigger("atk1");
+        }
     }
-    
+
+    private void HandlePlayerInput(out float horizontalInput, out bool jumpInput, out bool atkInput)
+    {
+        horizontalInput = Input.GetAxis("Horizontal");
+        jumpInput = Input.GetButtonDown("Jump");
+        atkInput = Input.GetButton("Fire2") && !_isGrounded;
+    }
+
     void SpriteFlip(float horizontalInput) => sr.flipX = (horizontalInput < 0);
     //if (sr.flipX && horizontalInput > 0 || !sr.flipX && horizontalInput < 0)
     //    sr.flipX = !sr.flipX;
