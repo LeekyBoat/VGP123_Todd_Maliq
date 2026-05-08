@@ -14,18 +14,23 @@ public class SimplePickup : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            PlayerController controller = collision.GetComponent<PlayerController>();
+
             switch (type)
             {
+
                 case PickupType.Health:
-                    //ControllerColliderHit.lives++;
+                    controller.lives++;
                     break;
 
+
                 case PickupType.JumpBoost:
-                    //ControllerColliderHit.JumpForceChange();
+                    controller.JumpForceChange();
                     break;
             }
 
-            Destroy(collision.gameObject);
+            Destroy(gameObject);
         }
+
     }
 }

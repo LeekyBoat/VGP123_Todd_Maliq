@@ -106,6 +106,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && _isGrounded)
         {
             anim.SetTrigger("atk1");
+
         }
 
         float horizontalInput;
@@ -130,6 +131,11 @@ public class PlayerController : MonoBehaviour
             anim.SetTrigger("atk1");
         }
 
+        /*if (clipInfo[0].clip.name == "atk1")
+        {
+            rb.linearVelocity = Vector2.zero;
+        }*/
+
         //2. Move our player horizontally based on the horizontal input value.
         rb.linearVelocityX = horizontalInput * moveSpeed;
 
@@ -142,6 +148,7 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("horizontalInput", Mathf.Abs(horizontalInput));
         anim.SetBool("isGrounded", _isGrounded);
         anim.SetFloat("yVel", rb.linearVelocityY);
+
     }
 
 
@@ -176,12 +183,39 @@ public class PlayerController : MonoBehaviour
         currentPowerupDuration = 0f;
     }
 
-
+    //For projectiles
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
     }
 
-     }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+
+    }
+
+    //For player pickups
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("PlayerController: OnTriggerEnter2D called with collider " + collision.name);
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Debug.Log("PlayerController: OnTriggerExit2D called with collider " + collision.name);
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        Debug.Log("PlayerController: OnTriggerStay2D called with collider " + collision.name);
+    }
+
+}
 
 
  

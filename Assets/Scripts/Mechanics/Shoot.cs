@@ -8,6 +8,7 @@ public class Shoot : MonoBehaviour
     [SerializeField] private Transform spawnPointLeft;
     [SerializeField] private Transform spawnPointRight;
     [SerializeField] private Projectile projectilePrefab;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,13 +34,21 @@ public class Shoot : MonoBehaviour
 
         if (!sr.flipX)
         {
+            Debug.Log("Shooting RIGHT");
+
             curProjectile = Instantiate(projectilePrefab, spawnPointRight.position, Quaternion.identity);
+        
             curProjectile.SetVelocity(initialShotVelocity);
         }
+
+
         else
         {
+            Debug.Log("Shooting LEFT");
+
             curProjectile = Instantiate(projectilePrefab, spawnPointLeft.position, Quaternion.identity);
-            curProjectile.SetVelocity(initialShotVelocity);
+            
+            curProjectile.SetVelocity (new Vector2(-Mathf.Abs(initialShotVelocity.x), initialShotVelocity.y));
         }
     }
 }
