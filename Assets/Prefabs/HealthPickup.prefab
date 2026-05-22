@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3866500918134039000}
   - component: {fileID: 6796004089996378273}
   m_Layer: 0
-  m_Name: Pickup
+  m_Name: HealthPickup
   m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,4 +151,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1842711fb3f67a34d80197d4f704a0e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimplePickup
-  type: 1
+  type: 0

@@ -202,6 +202,16 @@ public class PlayerController : MonoBehaviour
     //For player pickups
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("Squish") && rb.linearVelocityY < 0)
+        {
+            BaseEnemy enemy = collision.GetComponentInParent<BaseEnemy>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(0, BaseEnemy.DamageType.JumpedOn);
+                rb.linearVelocityY = 0;
+                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            }
+        }
         Debug.Log("PlayerController: OnTriggerEnter2D called with collider " + collision.name);
     }
 
