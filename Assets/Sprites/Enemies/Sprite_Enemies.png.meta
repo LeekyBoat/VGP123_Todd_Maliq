@@ -8617,7 +8617,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_293
+      name: enemyProjectile
       rect:
         serializedVersion: 2
         x: 831
@@ -12188,8 +12188,8 @@ TextureImporter:
         y: 123
         width: 16
         height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -12210,8 +12210,8 @@ TextureImporter:
         y: 123
         width: 16
         height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -12232,8 +12232,8 @@ TextureImporter:
         y: 123
         width: 16
         height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -12452,8 +12452,8 @@ TextureImporter:
         y: 137
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -13156,8 +13156,8 @@ TextureImporter:
         y: 120
         width: 16
         height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -17521,7 +17521,6 @@ TextureImporter:
       Sprite_Enemies_290: -675099761668843415
       Sprite_Enemies_291: 2634411856299483029
       Sprite_Enemies_292: 5163059118326160480
-      Sprite_Enemies_293: -147000117367987440
       Sprite_Enemies_294: -5848260441219407533
       Sprite_Enemies_295: 4124066648242222114
       Sprite_Enemies_296: -2977761213111189738
@@ -17985,6 +17984,7 @@ TextureImporter:
       TurretFire2: 4627375648895073383
       TurretFire3: 695433566626481274
       TurretIdle: 6826037723698911918
+      enemyProjectile: -147000117367987440
       koopaHit: -8320605450497437263
       koopaWalk1: 4096748978658626181
   mipmapLimitGroupName: 

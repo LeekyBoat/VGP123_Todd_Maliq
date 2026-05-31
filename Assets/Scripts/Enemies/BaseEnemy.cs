@@ -21,10 +21,11 @@ public abstract class BaseEnemy : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        
         if (maxHealth <= 0)
         {
             maxHealth = 5;
-            Debug.LogWarning("BaseEnemy: Max health was not set, defaulting to 5 " +gameObject.name);
+            Debug.LogWarning("BaseEnemy: Max health was not set, defaulting to 5 on " + gameObject.name);
         }
     }
 

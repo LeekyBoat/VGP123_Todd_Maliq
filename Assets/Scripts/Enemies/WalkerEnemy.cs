@@ -1,3 +1,4 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class WalkerEnemy : BaseEnemy
@@ -24,7 +25,7 @@ public class WalkerEnemy : BaseEnemy
         if (damageType == DamageType.JumpedOn)
         {
             anim.SetTrigger("Squish");
-            Destroy(transform.parent.gameObject, 0.05f);
+            Destroy(transform.parent.gameObject, 0.5f);
             return;
         }
 
@@ -37,7 +38,8 @@ public class WalkerEnemy : BaseEnemy
 
         if (stateInfo.IsName("Walk"))
         {
-            //if (sr.flipX
+          //if (sr.flipX) rb.linearVelocityX = -xVel;
+         // else rb.linearVelocityX = xVel;
 
             rb.linearVelocityX = sr.flipX ? -xVel : xVel;
         }

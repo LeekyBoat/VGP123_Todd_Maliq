@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     [Header("Player Settings")]
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float jumpForce = 5f;
-    [SerializeField] private int maxLives = 9;
+    //[SerializeField] private int maxLives = 9;
 
     [Header("Powerup Settings")]
     [SerializeField] private float jumpForcePowerup = 15f;
@@ -26,29 +26,29 @@ public class PlayerController : MonoBehaviour
     //1. Pull our input so that we can see what our input values are.
     //2. Move our player horizontally based on the horizontal input value.
 
-    private int _lives = 3;
-    public int lives
-    {
-        get { return _lives; }
-        set
-        {
-            if (value > maxLives)
-            {
-                _lives = maxLives;
-            }
-            else if (value < 0)
-            {
-                _lives = 0;
-                //go to game over
-            }
-            else
-            {
-                _lives = value;
-            }
+    //private int _lives = 3;
+    //public int lives
+    //{
+    //    get { return _lives; }
+    //    set
+    //    {
+    //        if (value > maxLives)
+    //        {
+    //            _lives = maxLives;
+    //        }
+    //        else if (value < 0)
+    //        {
+    //            _lives = 0;
+    //            //go to game over
+    //        }
+    //        else
+    //        {
+    //            _lives = value;
+    //        }
 
-            Debug.Log($"Lives have changed to {_lives}");
-        }
-    }
+    //        Debug.Log($"Lives have changed to {_lives}");
+    //    }
+    //}
 
     private int _score = 0;
     public int score

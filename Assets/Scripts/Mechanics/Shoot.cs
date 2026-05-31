@@ -39,19 +39,13 @@ public class Shoot : MonoBehaviour
         if (!sr.flipX)
         {
             Debug.Log("Shooting RIGHT");
-
             curProjectile = Instantiate(projectilePrefab, spawnPointRight.position, Quaternion.identity);
-        
             curProjectile.SetVelocity(initialShotVelocity);
         }
-
-
         else
         {
             Debug.Log("Shooting LEFT");
-
-            curProjectile = Instantiate(projectilePrefab, spawnPointLeft.position, Quaternion.identity);
-            
+            curProjectile = Instantiate(projectilePrefab, spawnPointLeft.position, Quaternion.identity); 
             curProjectile.SetVelocity (new Vector2(-Mathf.Abs(initialShotVelocity.x), initialShotVelocity.y));
         }
 
