@@ -7,23 +7,24 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private float maxXPos;
 
     [SerializeField] private Transform target;
- 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        GameManager.Instance.OnPlayerSpawned += (player) => target = player.transform;
         //MAKE YOUR CODE DEFENSIVE AGAINST BAD INPUT
-        if (target == null)
-        {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
+        //if (target == null)
+        //{
+        //    GameObject player = GameObject.FindGameObjectWithTag("Player");
 
-            if (player == null)
-            {
-                Debug.LogError("CameraFollow: NO target assigned and no GameObject with tag 'Player' found scene.");
-                return;
-            }
+        //if (player == null)
+        //{
+        //    Debug.LogError("CameraFollow: NO target assigned and no GameObject with tag 'Player' found scene.");
+        //    return;
+        //}
 
-            target = player.transform;
-        }
+        //target = player.transform;
+        //}
     }
 
     //Inputs are polled in update, Physics are applied in FixedUpdate, and camera movement is best done in LateUpdate, so that we can be sure that the player has moved before we move the camera to follow them.

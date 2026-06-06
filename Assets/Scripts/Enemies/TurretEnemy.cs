@@ -17,7 +17,7 @@ public class TurretEnemy : BaseEnemy
         base.Start();
         shoot = GetComponent<Shoot>();
 
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+       // player = GameObject.FindGameObjectWithTag("Player").transform;
 
         if (fireRate <= 0f)
         {
@@ -32,9 +32,16 @@ public class TurretEnemy : BaseEnemy
     // Update is called once per frame
     void Update()
     {
-        if (player == null) return;
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+
+            return;
+
+        }
 
         float distance = Vector2.Distance(transform.position, player.position);
+        //Mathf.Abs(target.position.x - transform.position.x);
 
         playerInRange = distance <= detectionRange;
 

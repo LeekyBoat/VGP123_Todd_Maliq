@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 
 {
-    //Groundcheck
+    #region Settings and Configurable Variables
     [Header("Ground CHeck Settings")]
     [SerializeField] private float groundCheckRadius = 0.02f;
     [SerializeField] private LayerMask groundLayer;
@@ -16,39 +16,19 @@ public class PlayerController : MonoBehaviour
     [Header("Player Settings")]
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float jumpForce = 5f;
-    //[SerializeField] private int maxLives = 9;
+    [SerializeField] private int maxLives = 9;
 
     [Header("Powerup Settings")]
     [SerializeField] private float jumpForcePowerup = 15f;
     [SerializeField] private float initialPowerupDuration = 5f;
 
+    #endregion
 
-    //1. Pull our input so that we can see what our input values are.
+
+    //1. Poll our input so that we can see what our input values are.
     //2. Move our player horizontally based on the horizontal input value.
 
-    //private int _lives = 3;
-    //public int lives
-    //{
-    //    get { return _lives; }
-    //    set
-    //    {
-    //        if (value > maxLives)
-    //        {
-    //            _lives = maxLives;
-    //        }
-    //        else if (value < 0)
-    //        {
-    //            _lives = 0;
-    //            //go to game over
-    //        }
-    //        else
-    //        {
-    //            _lives = value;
-    //        }
-
-    //        Debug.Log($"Lives have changed to {_lives}");
-    //    }
-    //}
+    #region State Variables
 
     private int _score = 0;
     public int score
@@ -62,21 +42,25 @@ public class PlayerController : MonoBehaviour
     }
 
     //variables
-    private Rigidbody2D rb;
-    private Collider2D col;
-    private SpriteRenderer sr;
-    private Animator anim;
+   
     //cached variables
-    private Vector2 groundCheckPos => CalculateGroundCheckPos();
+  private Vector2 groundCheckPos => CalculateGroundCheckPos();
 
     //state variables
     private bool _isGrounded;
     private GroundCheck groundCheck;
-
     private float currentPowerupDuration = 0f;
     private float initialJumpForce = 5f;
-
     private Coroutine jumpForceCoroutine = null;
+    #endregion
+
+    #region Component References
+    private Rigidbody2D rb;
+    private Collider2D col;
+    private SpriteRenderer sr;
+    private Animator anim;
+    public Animator Anim => anim;
+    #endregion
 
     private Vector2 CalculateGroundCheckPos()
     {
