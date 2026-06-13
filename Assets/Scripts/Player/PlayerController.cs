@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int maxLives = 9;
 
     [Header("Powerup Settings")]
-    [SerializeField] private float jumpForcePowerup = 15f;
+    [SerializeField] private float jumpForcePowerup = 10f;
     [SerializeField] private float initialPowerupDuration = 5f;
 
     #endregion
@@ -87,7 +87,8 @@ public class PlayerController : MonoBehaviour
 
         _isGrounded = groundCheck.CheckGrounded();
 
-        if (Input.GetButtonDown("Fire1") && _isGrounded)
+        if (Input.GetButtonDown("Fire1") && _isGrounded &&
+    Time.timeScale > 0)
         {
             anim.SetTrigger("atk1");
 
@@ -170,7 +171,10 @@ public class PlayerController : MonoBehaviour
     //For projectiles
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            GameManager.Instance.lives--;
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -197,6 +201,12 @@ public class PlayerController : MonoBehaviour
             }
         }
         Debug.Log("PlayerController: OnTriggerEnter2D called with collider " + collision.name);
+        if (collision.CompareTag("Projectile"))
+        {
+            GameManager.Instance.lives--;
+            Destroy(collision.gameObject);
+        }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)

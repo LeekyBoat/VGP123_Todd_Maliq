@@ -41,7 +41,7 @@ public class CanvasManager : MonoBehaviour
             returnToMenuButton.onClick.AddListener(() => ChangeScene("Title"));
 
         if (resumeButton != null)
-            resumeButton.onClick.AddListener(() => SetMenu(null, pauseMenu));
+            resumeButton.onClick.AddListener(ResumeGame);
     }
     void Update()
     {
@@ -52,15 +52,14 @@ public class CanvasManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            if (pauseMenu.activeSelf)
-                SetMenu(null, pauseMenu);
-            else
-                SetMenu(pauseMenu, null);
+            if (!pauseMenu.activeSelf)
+                PauseGame();
         }
     }
 
     void ChangeScene(string sceneName)
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(sceneName);
     }
 
@@ -68,6 +67,17 @@ public class CanvasManager : MonoBehaviour
     {
         if (menuToActivate != null) menuToActivate.SetActive(true);
         if (menuToDeactivate != null) menuToDeactivate.SetActive(false);
+    }
+    void PauseGame()
+    {
+        Time.timeScale = 0f;
+        pauseMenu.SetActive(true);
+    }
+
+    void ResumeGame()
+    {
+        Time.timeScale = 1f;
+        SetMenu(null, pauseMenu);
     }
 
     void QuitGame()

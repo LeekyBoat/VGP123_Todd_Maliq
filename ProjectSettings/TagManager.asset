@@ -9,6 +9,8 @@ TagManager:
   - Environment
   - Barrier
   - Squish
+  - Walker
+  - Enemy
   layers:
   - Default
   - TransparentFX
