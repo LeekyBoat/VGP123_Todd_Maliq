@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 3827841293827287923}
   m_Layer: 0
   m_Name: TurretEnemyContainer
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -226,6 +226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TurretEnemy
   maxHealth: 5
   fireRate: 2
+  detectionRange: 5
 --- !u!1 &3201513152732443995
 GameObject:
   m_ObjectHideFlags: 0
