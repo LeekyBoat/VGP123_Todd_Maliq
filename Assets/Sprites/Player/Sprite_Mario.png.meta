@@ -1415,7 +1415,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Mario_51
+      name: hurt
       rect:
         serializedVersion: 2
         x: 143
@@ -1700,7 +1700,6 @@ TextureImporter:
       Sprite_Mario_46: 7368133104323931243
       Sprite_Mario_5: -7207716073158996441
       Sprite_Mario_50: -5021473000565013323
-      Sprite_Mario_51: -3917910848853407703
       Sprite_Mario_52: 2024578721505582386
       Sprite_Mario_53: -991126873710766664
       Sprite_Mario_54: -2451452407061476743
@@ -1711,6 +1710,7 @@ TextureImporter:
       Sprite_Mario_59: -7734174553045002093
       Sprite_Mario_6: 5693412132100505836
       Sprite_Mario_60: 1622122130505264950
+      hurt: -3917910848853407703
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

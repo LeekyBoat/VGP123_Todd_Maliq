@@ -284,6 +284,10 @@ MonoBehaviour:
   moveSpeed: 5
   jumpForce: 7
   maxLives: 9
+  jumpSound: {fileID: 0}
+  walkSound: {fileID: 0}
+  hurtSound: {fileID: 0}
+  throwSound: {fileID: 0}
   jumpForcePowerup: 15
   initialPowerupDuration: 5
 --- !u!95 &1447762721310427712

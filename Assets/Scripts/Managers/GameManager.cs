@@ -69,22 +69,21 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
-            string currentSceneName = SceneManager.GetActiveScene().name;
-            string sceneToLoad = "Title";
-
-
-                SceneManager.LoadScene(sceneToLoad);
-        }
-
-        if (Input.GetKeyDown(KeyCode.L))
-        {
+       if (Input.GetKeyDown(KeyCode.L))
+       {
             lives++;
-        }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            lives--;
-        }
+       }
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                lives--;
+            }
+            if (SceneManager.GetActiveScene().name == "GameOver")
+            {
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    SceneManager.LoadScene("Title");
+                }
+            }
     }
 
     public void SpawnPlayer (Vector3 spawnPos)

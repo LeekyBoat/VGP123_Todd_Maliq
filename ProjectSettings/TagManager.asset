@@ -11,6 +11,7 @@ TagManager:
   - Squish
   - Walker
   - Enemy
+  - Audio
   layers:
   - Default
   - TransparentFX

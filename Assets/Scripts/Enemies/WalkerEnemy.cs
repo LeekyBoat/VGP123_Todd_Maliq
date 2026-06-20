@@ -6,6 +6,12 @@ public class WalkerEnemy : BaseEnemy
    [SerializeField] private float xVel = 2f;
 
     private Rigidbody2D rb;
+    //AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     public override void Start()
     {
         base.Start();
@@ -16,14 +22,15 @@ public class WalkerEnemy : BaseEnemy
     }
 
 
+
     public override void TakeDamage(int damage, DamageType damageType = DamageType.Default)
     {
         AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
 
         if (stateInfo.IsName("Death") || stateInfo.IsName("Squish")) return;
-
         if (damageType == DamageType.JumpedOn)
         {
+            audioManager.PlaySFX(audioManager.e_hurt);
             anim.SetTrigger("Squish");
             Destroy(transform.parent.gameObject, 0.5f);
             return;

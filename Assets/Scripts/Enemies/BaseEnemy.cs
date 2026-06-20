@@ -1,6 +1,8 @@
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer), typeof(Animator))]
+
+
 public abstract class BaseEnemy : MonoBehaviour
 {
 
@@ -13,7 +15,13 @@ public abstract class BaseEnemy : MonoBehaviour
     protected int health;
 
     [SerializeField] protected int maxHealth = 5;
+    protected AudioManager audioManager;
 
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -36,6 +44,7 @@ public abstract class BaseEnemy : MonoBehaviour
         if (health < 0)
         {
             anim.SetTrigger("Death");
+            audioManager.PlaySFX(audioManager.e_hurt);
 
             if (transform.parent != null)
             {

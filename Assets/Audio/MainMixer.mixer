@@ -58,7 +58,7 @@ AudioMixerController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: NewAudioMixer
+  m_Name: MainMixer
   m_OutputGroup: {fileID: 0}
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
@@ -67,7 +67,13 @@ AudioMixerController:
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: ff73df1d79c2c5e439cdfd54aae83724
+    name: MasterVolume
+  - guid: 2dfca3e132a1d0241b1385d206ae49f3
+    name: MusicVolume
+  - guid: 364b6ac4703e8bc4d9eaede217b923bb
+    name: SFXVolume
   m_AudioMixerGroupViews:
   - guids:
     - 6d5387483d6328747a23e141442b93c7
@@ -133,6 +139,34 @@ AudioMixerEffectController:
   m_EffectName: Attenuation
   m_MixLevel: c0277a8f2b1cc4345874e22282276e0e
   m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &4648098818829662768
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 69f689eebe7c3d84787d8d9ae1615c72
+  m_EffectName: Duck Volume
+  m_MixLevel: 9e1ad6a643c51404c9bc8f7b92fb6d15
+  m_Parameters:
+  - m_ParameterName: Threshold
+    m_GUID: ed8c50e9ad1f75f4193ea103bbdf65c8
+  - m_ParameterName: Ratio
+    m_GUID: ed9ad15b4c735a14bb6b29bc4599d811
+  - m_ParameterName: Attack Time
+    m_GUID: cecc1b41891f6e74eb3f207a147968dc
+  - m_ParameterName: Release Time
+    m_GUID: 9c6e71243afcdb348942200b71ee4b83
+  - m_ParameterName: Make-up Gain
+    m_GUID: 4edeccf8c37aa664bafa1c58376cf319
+  - m_ParameterName: Knee
+    m_GUID: c881f26d59eda654e865ea9ac9765ce4
+  - m_ParameterName: Sidechain Mix
+    m_GUID: 0ee46864f5dbffb4ab84846f0000f196
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0

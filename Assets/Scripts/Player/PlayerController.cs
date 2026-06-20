@@ -7,9 +7,11 @@ public class PlayerController : MonoBehaviour
 
 {
     #region Settings and Configurable Variables
-    [Header("Ground CHeck Settings")]
+    [Header("Ground Check Settings")]
     [SerializeField] private float groundCheckRadius = 0.02f;
     [SerializeField] private LayerMask groundLayer;
+
+    AudioManager audioManager;
 
 
     // Configurable Variables
@@ -18,11 +20,19 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private int maxLives = 9;
 
+   
+    //[Header("SFX Settings")]
+    //[SerializeField] private AudioClip jumpSound;
+    //[SerializeField] private AudioClip walkSound;
+    //[SerializeField] private AudioClip hurtSound;
+    //[SerializeField] private AudioClip throwSound;
+
     [Header("Powerup Settings")]
     [SerializeField] private float jumpForcePowerup = 10f;
     [SerializeField] private float initialPowerupDuration = 5f;
 
     #endregion
+
 
 
     //1. Poll our input so that we can see what our input values are.
@@ -59,8 +69,15 @@ public class PlayerController : MonoBehaviour
     private Collider2D col;
     private SpriteRenderer sr;
     private Animator anim;
+    private AudioSource audioSource;
+    //private bool sfxPlayed = false;
     public Animator Anim => anim;
     #endregion
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     private Vector2 CalculateGroundCheckPos()
     {
@@ -76,8 +93,10 @@ public class PlayerController : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         groundCheck = new GroundCheck(col, rb, groundCheckRadius, groundLayer);
+        //audioSource = GetComponent<AudioSource>();
 
         initialJumpForce = jumpForce;
+
     }
 
     // Update is called once per frame
@@ -91,6 +110,7 @@ public class PlayerController : MonoBehaviour
     Time.timeScale > 0)
         {
             anim.SetTrigger("atk1");
+          //  audioManager.PlaySFX(audioManager.shoot);
 
         }
 
@@ -100,9 +120,11 @@ public class PlayerController : MonoBehaviour
 
         void HandlePlayerInput(out float horizontalInput, out bool jumpInput, out bool atkInput)
         {
+           
             horizontalInput = Input.GetAxis("Horizontal");
             jumpInput = Input.GetButtonDown("Jump");
             atkInput = Input.GetButton("Fire2") && !_isGrounded;
+          //  audioManager.PlaySFX(audioManager.walk);
         }
         if (horizontalInput != 0) SpriteFlip(horizontalInput);
 
@@ -128,17 +150,45 @@ public class PlayerController : MonoBehaviour
         if (jumpInput && _isGrounded)
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+
+            //Jump audio
+            audioManager.PlaySFX(audioManager.jump);
+
+            //audioSource.clip = jumpSound;
+            //audioSource.Play();
         }
 
         anim.SetFloat("horizontalInput", Mathf.Abs(horizontalInput));
         anim.SetBool("isGrounded", _isGrounded);
         anim.SetFloat("yVel", rb.linearVelocityY);
 
+        //if (Mathf.Abs(horizontalInput) > 0.1f && _isGrounded)
+        //{
+        //    if (!sfxPlayed)
+        //    {
+        //        audioManager.PlaySFX(audioManager.walk);
+        //        sfxPlayed = true;
+        //    }
+        //}
+        //else
+        //{
+        //    sfxPlayed = false;
+        //}
+    }
+
+    public void PlayFootstep()
+    {
+        audioManager.PlaySFX(audioManager.walk);
+    }
+
+    public void PlayShootAudio()
+    {
+        audioManager.PlaySFX(audioManager.shoot);
     }
 
 
 
-        public void JumpForceChange()
+    public void JumpForceChange()
     {
         if (jumpForceCoroutine != null)
         {
@@ -174,6 +224,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             GameManager.Instance.lives--;
+            audioManager.PlaySFX(audioManager.hurt, 1.5f);
         }
     }
 
@@ -204,6 +255,7 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("Projectile"))
         {
             GameManager.Instance.lives--;
+            audioManager.PlaySFX(audioManager.hurt, 1.5f);
             Destroy(collision.gameObject);
         }
 

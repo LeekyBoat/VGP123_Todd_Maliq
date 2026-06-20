@@ -11,6 +11,11 @@ public class TurretEnemy : BaseEnemy
 
     Shoot shoot;
 
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public override void Start()
     {
@@ -60,6 +65,7 @@ public class TurretEnemy : BaseEnemy
         {
             if (Time.time >= timeSinceLastShot + fireRate)
             {
+                audioManager.PlaySFX(audioManager.e_shoot);
                 anim.SetTrigger("Fire");
             }
         }
